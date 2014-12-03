@@ -11,7 +11,9 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
 
-  end  
+  end 
+
+ 
 
   def set_article
     @article = Article.find(params[:id])
