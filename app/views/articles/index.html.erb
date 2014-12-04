@@ -25,7 +25,7 @@
       </tbody>
     </table>
     <button type="button" class="btn btn-default btn-block">
-      <%= link_to 'Create', new_article_path %>
+      <%= link_to 'Create', new_article_path, remote: true, 'data-dismiss' => "modal" %>
     </button>
   </div>
 </div> 

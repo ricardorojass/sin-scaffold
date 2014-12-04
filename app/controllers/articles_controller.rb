@@ -26,11 +26,7 @@ class ArticlesController < ApplicationController
   # POST /articles
   def create
     @article = Article.new(post_params)
-    if @article.save
-      redirect_to articles_path
-    else
-      render "new"
-    end 
+    @article.save
   end
 
   # PATCH/PUT /articles/1
