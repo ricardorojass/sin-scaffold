@@ -11,11 +11,50 @@ class ArticlesController < ApplicationController
   # GET /articles/1.json
   def show
 
+  end
+
+  # GET /article/new
+  def new
+    @article = Article.new
   end 
 
- 
+  # GET /articles/1/edit
+  def edit
+  end  
+
+
+  # POST /articles
+  def create
+    @article = Article.new(post_params)
+    if @article.save
+      redirect_to articles_path
+    else
+      render "new"
+    end 
+  end
+
+  # PATCH/PUT /articles/1
+  def update
+    if @article.update(post_params)
+      redirect_to articles_path
+      
+    end  
+  end 
+
+  # DELETE /post/1
+  def destroy
+    @article.destroy
+    redirect_to articles_path
+  end  
+
+  private
 
   def set_article
     @article = Article.find(params[:id])
   end  
+
+  def post_params
+      params.require(:article).permit(:title, :body, :author_id)
+    end
+
 end
