@@ -31,10 +31,7 @@ class ArticlesController < ApplicationController
 
   # PATCH/PUT /articles/1
   def update
-    if @article.update(post_params)
-      redirect_to articles_path
-      
-    end  
+    @article.update(post_params)  
   end 
 
   # DELETE /post/1
